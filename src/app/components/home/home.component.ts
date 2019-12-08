@@ -7,8 +7,13 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   styles: []
 })
 export class HomeComponent implements OnInit {
+  nuevasCanciones: any[] = [];
   constructor(private spotify: SpotifyService) {
-    this.spotify.getNewRelease();
+    this.spotify.getNewRelease()
+    .subscribe( (data: any ) => {
+      console.log(data);
+      this.nuevasCanciones = data.albums.items;
+    });
   }
 
   ngOnInit() {}
