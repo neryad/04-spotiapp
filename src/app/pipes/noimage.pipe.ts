@@ -8,7 +8,7 @@ export class NoimagePipe implements PipeTransform {
   transform(images: any[] ): string {
 
     if (!images) {
-      return 'assets/img/noimage.png';
+      return 'https://www.quantabiodesign.com/wp-content/uploads/No-Photo-Available.jpg';
     }
 
     if ( images.length > 0) {
